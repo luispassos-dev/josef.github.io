@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8fa" />
+    <meta name="description" content="Meet José Faus, a software developer based in Viana do Castelo, Portugal. Explore his background, a little code, and the next chapter." />
+    <meta property="og:title" content="José Faus — Software developer" />
+    <meta property="og:description" content="A curious mind. A love for building. A software developer in Viana do Castelo, Portugal." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jose-faus-portfolio.grassy-ox-6893.chatgpt.site" />
+    <title>José Faus — Software developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233e5af3'/%3E%3Ctext x='32' y='42' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='29' font-weight='700'%3Ejf.%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&family=IBM+Plex+Mono:wght@400;450;500&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      :root {
+        --paper: #f7f8fa;
+        --ink: #202631;
+        --muted: #686f7d;
+        --blue: #3e5af3;
+        --line: #e4e7ec;
+        --mono: "IBM Plex Mono", monospace;
+        --display: "Manrope", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 108px; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      button { cursor: pointer; font: inherit; }
+      a { color: inherit; text-decoration: none; }
+      button, input { font-family: inherit; }
+      ::selection { background: #dbe1ff; color: #2034a3; }
+      :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; border-radius: 4px; }
+      .shell { width: min(1240px, calc(100% - 96px)); margin-inline: auto; }
+      .icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { display: none; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      .skip-link { position: fixed; top: -80px; left: 20px; z-index: 100; padding: 12px 18px; background: white; }
+      .skip-link:focus { top: 16px; }
+      .site-header { position: relative; z-index: 20; }
+      .nav-row { min-height: 112px; border-bottom: 1px solid var(--line); }
+      .brand { font-family: var(--display); font-size: 23px; font-weight: 800; letter-spacing: -1px; }
+      .brand-mark { display: grid; place-items: center; width: 39px; height: 39px; background: var(--blue); color: white; border-radius: 12px; font-size: 21px; letter-spacing: -1.8px; }
+      .nav-link { color: var(--muted); font-size: 14px; font-weight: 500; transition: color .18s; }
+      .nav-link:hover, .text-link:hover { color: var(--blue); }
+      .nav-contact { padding: 11px 17px; background: white; border: 1px solid #dde1e8; border-radius: 9px; font-size: 13px; font-weight: 600; }
+      .menu-button { display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: white; place-items: center; }
+      .hero { display: grid; grid-template-columns: 1.04fr 1fr; gap: 54px; align-items: center; padding: 88px 0 68px; }
+      .intro-line { color: #58616f; font-size: 14px; font-weight: 500; }
+      .tiny-dot { width: 7px; height: 7px; background: var(--blue); border-radius: 50%; display: inline-block; box-shadow: 0 0 0 4px #e8ecff; flex-shrink: 0; }
+      h1, h2, h3, p { margin: 0; }
+      .hero h1 { font-family: var(--display); font-size: clamp(72px, 7.2vw, 104px); line-height: 1.08; font-weight: 650; letter-spacing: -.069em; margin: 25px 0 24px; }
+      .hero-description { max-width: 380px; font-size: 18px; line-height: 1.7; color: var(--muted); }
+      .hero-description strong { font-weight: 500; color: var(--ink); }
+      .primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; padding: 15px 22px; background: var(--blue); color: white; border: 1px solid var(--blue); border-radius: 10px; font-size: 14px; font-weight: 550; transition: background .18s, box-shadow .18s; }
+      .primary-button:hover { background: #2e47d4; box-shadow: 0 5px 15px #3e5af326; }
+      .text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; transition: color .18s; }
+      .location { color: #657086; font-size: 12px; margin-top: 38px; }
+      .location .icon { width: 15px; height: 15px; }
+      .hero-art { position: relative; height: 490px; isolation: isolate; }
+      .art-field { position: absolute; inset: 0 0 0 28px; overflow: hidden; border-radius: 26px 100px 26px 26px; background: #e8edff; }
+      .art-field::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(#a4b1df 1px, transparent 1px); background-size: 18px 18px; opacity: .4; mask-image: linear-gradient(135deg, #000, transparent 80%); }
+      .art-field::after { content: ""; position: absolute; width: 370px; height: 370px; border: 54px solid #d7dffd; border-radius: 50%; bottom: -220px; left: -110px; }
+      .art-glyph { position: absolute; right: 24px; bottom: 13px; font-family: var(--display); color: #526ff3; opacity: .18; font-size: 150px; font-weight: 650; letter-spacing: -.1em; line-height: 1; transform: rotate(-12deg); user-select: none; }
+      .art-note { position: absolute; top: 29px; left: 56px; display: flex; align-items: center; gap: 8px; font-size: 11px; color: #5368a0; font-family: var(--mono); }
+      .art-note .icon { width: 14px; height: 14px; }
+      .editor { position: absolute; top: 88px; left: 0; right: 32px; background: #fff; border: 1px solid #dfe4ef; border-radius: 13px; overflow: hidden; box-shadow: 0 25px 50px -22px #253e8b38, 0 4px 8px #253e8b06; transform: rotate(-3deg); }
+      .editor-top { display: flex; align-items: center; height: 44px; padding: 0 16px; border-bottom: 1px solid #ecedf2; gap: 6px; background: #fafbfd; }
+      .window-dot { width: 7px; height: 7px; border-radius: 50%; background: #e4e7ee; }
+      .window-dot:first-child { background: #f1ada9; }
+      .window-dot:nth-child(2) { background: #e7d19b; }
+      .window-dot:nth-child(3) { background: #b0d4c2; }
+      .editor-title { text-align: center; flex: 1; padding-right: 33px; color: #616c80; font-family: var(--mono); font-size: 10px; }
+      .editor-tabs { display: flex; gap: 0; padding-left: 15px; border-bottom: 1px solid #ecedf2; }
+      .editor-tab { border: 0; background: transparent; color: #616c80; font-family: var(--mono); font-size: 10px; padding: 13px 14px; border-bottom: 2px solid transparent; display: flex; align-items: center; gap: 6px; }
+      .editor-tab[aria-selected="true"] { color: #4e5a80; border-bottom-color: var(--blue); background: #fafbff; }
+      .js-icon { font-family: var(--mono); color: #a68a38; font-size: 9px; font-weight: 500; }
+      .code-panel { min-height: 229px; padding: 19px 16px 20px 0; font: 11.5px/1.95 var(--mono); color: #4a536c; }
+      .code-line { display: flex; white-space: pre; }
+      .line-number { display: inline-block; width: 47px; flex-shrink: 0; text-align: center; color: #b4b9c6; user-select: none; }
+      .code-keyword { color: #8c61bb; }
+      .code-string { color: #248c70; }
+      .code-property { color: #526ca9; }
+      .code-comment { color: #68758b; }
+      .editor-bottom { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: #f7f9ff; border-top: 1px solid #ecedf2; color: #616c80; font: 9px var(--mono); }
+      .run-button { display: inline-flex; align-items: center; gap: 6px; border: 0; border-radius: 5px; background: #e6ebff; padding: 6px 9px; color: #415bd0; font: 10px var(--mono); }
+      .run-button:hover { background: #d9e0ff; }
+      .run-button .icon { width: 10px; height: 10px; fill: currentColor; stroke-width: 0; }
+      .terminal { position: absolute; bottom: 19px; right: -12px; width: 304px; background: #283244; border: 1px solid #354157; border-radius: 10px; box-shadow: 0 15px 30px -15px #28324466; padding: 15px 18px; transform: rotate(3deg); color: #d7dfef; }
+      .terminal-label { color: #a0aec5; font: 9px var(--mono); display: flex; gap: 7px; align-items: center; margin-bottom: 10px; }
+      .terminal-label .icon { width: 12px; height: 12px; }
+      .terminal-output { font: 10px/1.8 var(--mono); min-height: 36px; }
+      .terminal-prompt { color: #8dc7b6; margin-right: 6px; }
+      .terminal-output p { margin: 0; }
+      .cursor { display: inline-block; width: 5px; height: 10px; background: #b4c2e0; vertical-align: -1px; margin-left: 5px; }
+      .hero-foot { border-top: 1px solid var(--line); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .hero-foot-label { color: #657086; font-size: 12px; }
+      .foot-detail { font-size: 13px; color: #606978; display: flex; align-items: center; gap: 10px; }
+      .foot-detail .icon { color: #8791a3; width: 17px; height: 17px; }
+      .section { padding-block: 108px; }
+      .section-label { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #657086; margin-bottom: 20px; }
+      .section-label::before { content: ""; width: 18px; height: 2px; background: var(--blue); }
+      .section-heading { font-family: var(--display); font-size: clamp(34px, 4.3vw, 56px); letter-spacing: -.055em; font-weight: 550; line-height: 1.2; }
+      .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
+      .about-copy { padding-top: 39px; font-size: 16px; line-height: 1.85; color: var(--muted); }
+      .about-copy p + p { margin-top: 19px; }
+      .about-copy .text-link { margin-top: 25px; color: var(--ink); }
+      .about-aside { font-size: 13px; color: #657086; margin-top: 22px; }
+      .playground-section { background: #fff; border-top: 1px solid #eef0f4; border-bottom: 1px solid #eef0f4; }
+      .section-top { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
+      .section-top p { color: var(--muted); max-width: 282px; font-size: 14px; line-height: 1.75; padding-bottom: 4px; }
+      .playground { display: grid; grid-template-columns: 1.15fr 1fr; background: #f6f8fb; border: 1px solid #e6e9ef; border-radius: 20px; overflow: hidden; }
+      .playground-visual { --demo-accent: #3e5af3; --demo-tint: #e7ecff; background: var(--demo-tint); padding: 52px 46px 25px; min-height: 386px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: background .3s; }
+      .mini-site { width: min(100%, 370px); padding: 22px 25px 25px; border: 1px solid #ffffffa6; background: #ffffffed; border-radius: 10px; box-shadow: 0 18px 35px -20px #34447445; transform: rotate(-4deg); }
+      .mini-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e9edf3; padding-bottom: 15px; }
+      .mini-brand { color: var(--demo-accent); font-family: var(--display); font-weight: 800; font-size: 17px; letter-spacing: -1px; transition: color .3s; }
+      .mini-nav { display: flex; gap: 10px; }
+      .mini-nav span { width: 20px; height: 3px; background: #e0e5ed; border-radius: 2px; }
+      .mini-greeting { font-size: 9px; color: #657086; margin-top: 24px; }
+      .mini-title { font-family: var(--display); font-size: 37px; line-height: 1.2; letter-spacing: -2px; font-weight: 650; margin: 9px 0 15px; }
+      .mini-lines { width: 68%; display: grid; gap: 6px; }
+      .mini-lines span { height: 4px; border-radius: 4px; background: #e5e9ef; }
+      .mini-lines span:last-child { width: 75%; }
+      .mini-button { display: inline-flex; gap: 18px; align-items: center; font-size: 8px; margin-top: 21px; padding: 9px 12px; background: var(--demo-accent); border-radius: 5px; color: white; transition: background .3s; }
+      .mini-button .icon { width: 10px; height: 10px; }
+      .palette { display: flex; align-items: center; gap: 9px; margin-top: 36px; }
+      .palette-option { display: grid; place-items: center; padding: 0; width: 25px; height: 25px; border-radius: 50%; border: 3px solid #fff; background: var(--swatch); box-shadow: 0 0 0 1px transparent; }
+      .palette-option[aria-pressed="true"] { box-shadow: 0 0 0 1px var(--swatch); }
+      .palette-option .icon { width: 12px; height: 12px; color: white; opacity: 0; stroke-width: 2.5; }
+      .palette-option[aria-pressed="true"] .icon { opacity: 1; }
+      .palette-hint { font-size: 10px; color: #5d6b80; padding-left: 5px; }
+      .playground-copy { padding: 49px 46px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+      .project-category { font-size: 11px; color: #6d7789; display: flex; align-items: center; gap: 6px; }
+      .project-category .icon { width: 14px; height: 14px; color: var(--blue); }
+      .playground-copy h3 { font-family: var(--display); font-size: 31px; letter-spacing: -1.3px; font-weight: 600; line-height: 1.3; margin: 17px 0 15px; }
+      .playground-copy p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+      .tech-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 24px; }
+      .tech-tags span { padding: 5px 9px; border: 1px solid #e0e4ec; border-radius: 5px; background: #fff; color: #657086; font-size: 10px; }
+      .playground-copy .text-link { margin-top: 28px; color: var(--blue); font-size: 12px; }
+      .journey-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 96px; }
+      .journey-intro { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 260px; margin-top: 20px; }
+      .timeline { padding-top: 8px; }
+      .timeline-item { position: relative; padding: 0 0 35px 38px; border-left: 1px solid #dce1eb; }
+      .timeline-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+      .timeline-dot { position: absolute; left: -6px; top: 4px; width: 11px; height: 11px; border: 2px solid var(--paper); background: var(--blue); border-radius: 50%; box-shadow: 0 0 0 1px #bdc8fb; }
+      .timeline-item:last-child .timeline-dot { background: #aeb9cf; box-shadow: 0 0 0 1px #d8dfe9; }
+      .timeline-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 9px; color: #657086; font-size: 11px; }
+      .timeline-title { font-family: var(--display); font-size: 23px; line-height: 1.35; letter-spacing: -.8px; font-weight: 600; }
+      .timeline-item p { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.75; max-width: 340px; }
+      .timeline-item .text-link { margin-top: 12px; font-size: 11px; color: #657187; }
+      .timeline-item .icon { width: 13px; height: 13px; }
+      .contact { padding: 68px 65px; border-radius: 22px; background: #e9edff; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 34px; position: relative; overflow: hidden; }
+      .contact h2 { max-width: 600px; font-family: var(--display); font-size: clamp(32px, 4.3vw, 52px); line-height: 1.17; font-weight: 550; letter-spacing: -.05em; }
+      .contact p { font-size: 14px; line-height: 1.7; color: #5c6b8a; margin-top: 17px; }
+      .contact .primary-button { white-space: nowrap; }
+      .footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 34px 0 31px; }
+      .footer-signature { color: #657086; font-size: 11px; }
+      .footer-right { display: flex; gap: 25px; align-items: center; color: #657086; font-size: 11px; }
+      .footer-right a { display: flex; align-items: center; gap: 6px; }
+      .footer-right .icon { width: 12px; height: 12px; }
+      .page-intro { animation: enter .7s ease-out both; }
+      @keyframes enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes output-flash { 0% { opacity: .25; } 100% { opacity: 1; } }
+      .output-flash { animation: output-flash .35s ease-out; }
+      [hidden] { display: none !important; }
+      @media (min-width: 1450px) { .hero { padding-top: 108px; padding-bottom: 86px; } }
+      @media (max-width: 1100px) {
+        .shell { width: calc(100% - 64px); }
+        .hero { gap: 28px; }
+        .hero-art { height: 455px; }
+        .hero h1 { font-size: 84px; }
+        .editor { right: 8px; }
+        .code-panel { font-size: 10px; }
+        .editor-tabs { padding-left: 8px; }
+        .editor-tab { padding-inline: 10px; }
+        .line-number { width: 35px; }
+        .about-grid, .journey-grid { gap: 58px; }
+        .playground-visual, .playground-copy { padding-inline: 30px; }
+        .contact { padding: 52px 40px; }
+      }
+      @media (max-width: 800px) {
+        .shell { width: calc(100% - 48px); }
+        .nav-row { min-height: 88px; }
+        .desktop-nav { gap: 24px; }
+        .hero { grid-template-columns: 1fr; gap: 46px; padding: 57px 0 45px; }
+        .hero h1 { font-size: 86px; }
+        .hero-description { max-width: 420px; }
+        .location { margin-top: 27px; }
+        .hero-art { width: min(100%, 500px); height: 457px; justify-self: center; }
+        .editor { right: 32px; }
+        .code-panel { font-size: 11.5px; }
+        .editor-tab { padding-inline: 14px; }
+        .line-number { width: 47px; }
+        .terminal { bottom: 0; right: 0; }
+        .hero-foot { flex-wrap: wrap; gap: 15px; }
+        .hero-foot-label { width: 100%; }
+        .section { padding-block: 74px; }
+        .about-grid, .journey-grid { grid-template-columns: 1fr; gap: 30px; }
+        .about-copy { padding-top: 0; max-width: 560px; }
+        .about-aside { margin-top: 16px; }
+        .section-top { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 28px; }
+        .section-top p { max-width: 400px; }
+        .playground { grid-template-columns: 1fr; }
+        .playground-visual { min-height: 355px; }
+        .playground-copy { padding: 32px; }
+        .playground-copy h3 { font-size: 30px; }
+        .journey-intro { max-width: 400px; }
+        .timeline { margin-top: 10px; margin-left: 6px; }
+        .timeline-item p { max-width: 450px; }
+        .contact { grid-template-columns: 1fr; padding: 39px 30px; gap: 26px; }
+        .contact .primary-button { justify-self: start; }
+      }
+      @media (max-width: 560px) {
+        .shell { width: calc(100% - 40px); }
+        .nav-row { min-height: 80px; }
+        .brand { font-size: 20px; }
+        .brand-mark { width: 34px; height: 34px; border-radius: 10px; font-size: 19px; }
+        .desktop-nav { display: none; }
+        .menu-button { display: grid; }
+        .mobile-nav { position: absolute; top: 72px; left: 20px; right: 20px; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 8px; box-shadow: 0 15px 30px #28324412; }
+        .mobile-nav a { display: flex; align-items: center; justify-content: space-between; padding: 14px; border-radius: 7px; font-size: 14px; }
+        .mobile-nav a:hover { background: var(--paper); }
+        .hero { padding-top: 40px; gap: 43px; }
+        .intro-line { font-size: 12px; }
+        .hero h1 { font-size: clamp(63px, 17vw, 86px); margin-top: 23px; }
+        .hero-description { font-size: 16px; line-height: 1.75; max-width: 330px; }
+        .hero-actions { gap: 22px; margin-top: 27px; }
+        .primary-button { font-size: 13px; padding: 14px 17px; gap: 15px; }
+        .text-link { font-size: 13px; }
+        .location { font-size: 11px; }
+        .hero-art { height: 393px; }
+        .art-field { left: 13px; right: 3px; border-radius: 20px 75px 20px 20px; }
+        .art-note { top: 24px; left: 32px; font-size: 10px; }
+        .editor { top: 66px; left: 1px; right: 11px; transform: rotate(-2.5deg); }
+        .editor-top { height: 36px; padding-inline: 13px; }
+        .editor-title { font-size: 9px; }
+        .editor-tab { font-size: 9px; padding: 10px; }
+        .code-panel { min-height: 208px; padding-top: 15px; font-size: clamp(8.6px, 2.45vw, 10.5px); line-height: 2; }
+        .line-number { width: 30px; }
+        .editor-bottom { padding: 8px 12px; font-size: 8px; }
+        .terminal { width: 258px; padding: 12px 15px; bottom: -3px; right: -2px; }
+        .terminal-output { font-size: 9px; min-height: 33px; }
+        .terminal-label { font-size: 8px; margin-bottom: 6px; }
+        .art-glyph { font-size: 120px; bottom: 17px; }
+        .hero-foot { padding: 23px 0; gap: 14px 24px; }
+        .foot-detail { font-size: 11px; gap: 8px; }
+        .foot-detail .icon { width: 15px; height: 15px; }
+        .section { padding-block: 60px; }
+        .section-label { font-size: 12px; margin-bottom: 17px; }
+        .section-heading { font-size: 37px; }
+        .about-copy { font-size: 15px; }
+        .about-aside { font-size: 12px; }
+        .playground-visual { padding: 38px 29px 22px; min-height: 333px; }
+        .mini-site { padding: 18px 22px 22px; }
+        .mini-title { font-size: 33px; }
+        .palette { margin-top: 29px; }
+        .playground-copy { padding: 29px 26px 33px; }
+        .playground-copy h3 { font-size: 28px; }
+        .playground-copy p { font-size: 13px; }
+        .timeline-title { font-size: 21px; }
+        .timeline-item { padding-left: 25px; }
+        .timeline-meta { align-items: start; }
+        .contact { padding: 33px 25px; border-radius: 16px; }
+        .contact h2 { font-size: 35px; }
+        .contact p { font-size: 13px; }
+        .footer { padding-block: 29px; flex-direction: column; align-items: start; gap: 18px; }
+        .footer-right { justify-content: space-between; width: 100%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+      <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" /></symbol>
+      <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6" /></symbol>
+      <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" /></symbol>
+      <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.5" /></symbol>
+      <symbol id="code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16" /></symbol>
+      <symbol id="cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Zm4 3v5c4 3 8 3 12 0v-5m4-3v7" /></symbol>
+      <symbol id="briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="3" /><path d="M8 7V4h8v3M3 12c6 4 12 4 18 0m-9 1v3" /></symbol>
+      <symbol id="terminal" viewBox="0 0 24 24"><path d="m4 5 6 6-6 6m8 1h8" /></symbol>
+      <symbol id="play" viewBox="0 0 24 24"><path d="m7 3 14 9L7 21V3Z" /></symbol>
+      <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M7 10v7m0-10v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4" /></symbol>
+    </svg>
+
+    <header class="site-header shell">
+      <div class="nav-row flex items-center justify-between">
+        <a class="brand flex items-center gap-3" href="#" aria-label="José Faus, home"><span class="brand-mark" aria-hidden="true">jf.</span><span>José Faus<span style="color:var(--blue)">.</span></span></a>
+        <nav class="desktop-nav flex items-center gap-9" aria-label="Main navigation">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#playground">Playground</a>
+          <a class="nav-link" href="#journey">Journey</a>
+          <a class="nav-contact inline-flex items-center gap-3" href="#contact">Let’s connect<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></a>
+        </nav>
+        <button class="menu-button" id="menu-button" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path id="menu-icon" d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#about">About<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg></a>
+        <a href="#playground">Playground<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg></a>
+        <a href="#journey">Journey<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg></a>
+        <a href="#contact">Let’s connect<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="shell" aria-labelledby="hero-title">
+        <div class="hero page-intro">
+          <div>
+            <div class="intro-line flex items-center gap-3"><span class="tiny-dot" aria-hidden="true"></span>A curious mind. A love for building.</div>
+            <h1 id="hero-title">Hi, I’m<br />José Faus.</h1>
+            <p class="hero-description"><strong>Software developer.</strong> Turning curiosity into code, one thoughtful solution at a time.</p>
+            <div class="hero-actions flex flex-wrap items-center gap-7 mt-8">
+              <a class="primary-button" href="#about">A little about me<svg class="icon" aria-hidden="true"><use href="#arrow-down" /></svg></a>
+              <a class="text-link" href="https://www.linkedin.com/in/jose-faus" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+            <div class="location flex items-center gap-2"><svg class="icon" aria-hidden="true"><use href="#pin" /></svg>Viana do Castelo, Portugal</div>
+          </div>
+
+          <div class="hero-art" aria-label="An interactive introduction in a code editor">
+            <div class="art-field" aria-hidden="true"><span class="art-glyph">&lt;/&gt;</span></div>
+            <div class="art-note"><svg class="icon" aria-hidden="true"><use href="#code" /></svg>A little introduction, in code.</div>
+            <div class="editor">
+              <div class="editor-top" aria-hidden="true"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="editor-title">a work in progress, always</span></div>
+              <div class="editor-tabs" role="tablist" aria-label="Introduction files">
+                <button class="editor-tab" id="tab-about" type="button" role="tab" aria-selected="true" aria-controls="panel-about" tabindex="0"><span class="js-icon" aria-hidden="true">JS</span>about.js</button>
+                <button class="editor-tab" id="tab-hello" type="button" role="tab" aria-selected="false" aria-controls="panel-hello" tabindex="-1"><span class="js-icon" aria-hidden="true">JS</span>hello.js</button>
+              </div>
+              <div class="code-panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+                <div class="code-line"><span class="line-number" aria-hidden="true">1</span><code><span class="code-keyword">const</span> jose = {</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">2</span><code>  <span class="code-property">name</span>: <span class="code-string">"José Faus"</span>,</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">3</span><code>  <span class="code-property">role</span>: <span class="code-string">"Software developer"</span>,</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">4</span><code>  <span class="code-property">basedIn</span>: <span class="code-string">"Viana do Castelo, PT"</span>,</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">5</span><code>  <span class="code-property">education</span>: <span class="code-string">"IPVC"</span>,</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">6</span><code>  <span class="code-property">experience</span>: <span class="code-string">"Colab4Food"</span></code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">7</span><code>};</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">8</span><code> </code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">9</span><code><span class="code-comment">// Every great thing starts somewhere.</span></code></div>
+              </div>
+              <div class="code-panel" id="panel-hello" role="tabpanel" aria-labelledby="tab-hello" tabindex="0" hidden>
+                <div class="code-line"><span class="line-number" aria-hidden="true">1</span><code><span class="code-comment">// A small idea. A first line of code.</span></code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">2</span><code> </code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">3</span><code><span class="code-keyword">function</span> <span class="code-property">sayHello</span>() {</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">4</span><code>  <span class="code-keyword">return</span> <span class="code-string">"Hello, world. Olá, mundo."</span>;</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">5</span><code>}</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">6</span><code> </code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">7</span><code>console.<span class="code-property">log</span>(<span class="code-property">sayHello</span>());</code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">8</span><code> </code></div>
+                <div class="code-line"><span class="line-number" aria-hidden="true">9</span><code><span class="code-comment">// Go on, give it a run ↓</span></code></div>
+              </div>
+              <div class="editor-bottom"><span>JavaScript<span aria-hidden="true">&nbsp; · &nbsp;</span>UTF-8</span><button class="run-button" id="run-code" type="button"><svg class="icon" aria-hidden="true"><use href="#play" /></svg>Run code</button></div>
+            </div>
+            <div class="terminal">
+              <div class="terminal-label"><svg class="icon" aria-hidden="true"><use href="#terminal" /></svg>Output</div>
+              <div class="terminal-output" id="terminal-output" role="status" aria-live="polite" aria-atomic="true"><p><span class="terminal-prompt">❯</span> Good things begin with “hello”.</p><p style="color:#a0aec5">Press Run code to meet me.<span class="cursor" aria-hidden="true"></span></p></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <span class="hero-foot-label">A little context</span>
+          <span class="foot-detail"><svg class="icon" aria-hidden="true"><use href="#code" /></svg>Software development</span>
+          <a class="foot-detail" href="#journey"><svg class="icon" aria-hidden="true"><use href="#cap" /></svg>IPVC, 2021–2024</a>
+          <a class="foot-detail" href="#journey"><svg class="icon" aria-hidden="true"><use href="#briefcase" /></svg>Experience at Colab4Food</a>
+        </div>
+      </section>
+
+      <section class="section shell" id="about" aria-labelledby="about-title">
+        <div class="about-grid">
+          <div><div class="section-label">The person behind the code</div><h2 class="section-heading" id="about-title">Getting started.<br />Thinking forward.</h2><p class="about-aside">From Viana do Castelo, with curiosity.</p></div>
+          <div class="about-copy"><p>I’m José, a junior software developer based in northern Portugal, with an academic background at Instituto Politécnico de Viana do Castelo and experience at Colab4Food.</p><p>This is my little space on the internet: an introduction, a small experiment, and a place to start a conversation about what comes next.</p><a class="text-link" href="https://www.linkedin.com/in/jose-faus" target="_blank" rel="noopener noreferrer">More of my story on LinkedIn<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span></a></div>
+        </div>
+      </section>
+
+      <section class="section playground-section" id="playground" aria-labelledby="playground-title">
+        <div class="shell">
+          <div class="section-top"><div><div class="section-label">A small experiment</div><h2 class="section-heading" id="playground-title">Less talk. A little play.</h2></div><p>Small details make a difference.<br />Here’s one you can try for yourself.</p></div>
+          <div class="playground">
+            <div class="playground-visual" id="playground-visual">
+              <div class="mini-site" aria-hidden="true"><div class="mini-header"><span class="mini-brand">jf.</span><div class="mini-nav"><span></span><span></span><span></span></div></div><div class="mini-greeting">A curious mind. A love for building.</div><div class="mini-title">Hi, I’m<br />José Faus.</div><div class="mini-lines"><span></span><span></span></div><div class="mini-button">A little about me<svg class="icon"><use href="#arrow-down" /></svg></div></div>
+              <div class="palette" role="group" aria-label="Choose a preview color">
+                <button class="palette-option" type="button" data-color="blue" style="--swatch:#3e5af3" aria-label="Blue preview" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#check" /></svg></button>
+                <button class="palette-option" type="button" data-color="green" style="--swatch:#258575" aria-label="Green preview" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#check" /></svg></button>
+                <button class="palette-option" type="button" data-color="rose" style="--swatch:#b44f70" aria-label="Rose preview" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#check" /></svg></button>
+                <span class="palette-hint" id="palette-hint" role="status">Make it your color.</span>
+              </div>
+            </div>
+            <div class="playground-copy"><div class="project-category"><svg class="icon" aria-hidden="true"><use href="#code" /></svg>You’re looking at it</div><h3>A little corner<br />of the internet.</h3><p>A simple personal portfolio with a few playful details. No heavy framework. Just a clear introduction and some room to explore.</p><div class="tech-tags" aria-label="Technologies used for this website"><span>HTML</span><span>Tailwind CSS</span><span>JavaScript</span></div><button class="text-link" id="try-color" type="button">Try a different color<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="journey" aria-labelledby="journey-title">
+        <div class="journey-grid">
+          <div><div class="section-label">The journey so far</div><h2 class="section-heading" id="journey-title">A foundation.<br />An open horizon.</h2><p class="journey-intro">An academic beginning, professional experience, and plenty still to discover.</p></div>
+          <div class="timeline">
+            <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><div class="timeline-meta"><span>Professional experience</span><svg class="icon" aria-hidden="true"><use href="#briefcase" /></svg></div><h3 class="timeline-title">Colab4Food</h3><p>The professional chapter in my development journey, alongside a collaborative innovation community.</p><a class="text-link" href="https://www.linkedin.com/in/jose-faus" target="_blank" rel="noopener noreferrer">View experience on LinkedIn<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span></a></article>
+            <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><div class="timeline-meta"><span>Academic background</span><span>2021–2024</span></div><h3 class="timeline-title">Instituto Politécnico<br />de Viana do Castelo</h3><p>Three years of study in Viana do Castelo, forming the academic foundation for a career in development.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell" id="contact" aria-labelledby="contact-title">
+        <div class="contact"><div><h2 id="contact-title">The next good thing<br />starts with a hello.</h2><p>An idea, an opportunity, or just a conversation.<br />Let’s see where it takes us.</p></div><a class="primary-button" href="https://www.linkedin.com/in/jose-faus" target="_blank" rel="noopener noreferrer">Say hello on LinkedIn<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg><span class="sr-only"> (opens in a new tab)</span></a></div>
+      </section>
+    </main>
+
+    <footer class="footer shell"><p class="footer-signature">© <span id="year">2026</span> José Faus. A work in progress, always.</p><div class="footer-right"><span>Built with a little curiosity.</span><a href="#">Back to top<svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></a></div></footer>
+
+    <script>
+      // The page works directly from disk; no packages, build step, or API keys.
+      const menuButton = document.getElementById('menu-button');
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuIcon = document.getElementById('menu-icon');
+      const setMenu = (open) => {
+        mobileNav.hidden = !open;
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+        menuIcon.setAttribute('d', open ? 'M6 6l12 12M6 18 18 6' : 'M4 7h16M4 12h16M4 17h16');
+      };
+      menuButton.addEventListener('click', () => setMenu(mobileNav.hidden));
+      mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('click', (event) => {
+        if (!mobileNav.hidden && !event.target.closest('.site-header')) setMenu(false);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !mobileNav.hidden) { setMenu(false); menuButton.focus(); }
+      });
+      window.matchMedia('(min-width: 561px)').addEventListener('change', (event) => { if (event.matches) setMenu(false); });
+
+      const tabs = Array.from(document.querySelectorAll('.editor-tab'));
+      const selectTab = (selected) => {
+        tabs.forEach((tab) => {
+          const active = tab === selected;
+          tab.setAttribute('aria-selected', String(active));
+          tab.tabIndex = active ? 0 : -1;
+          document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+        });
+      };
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          let next;
+          if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+          if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+          if (event.key === 'Home') next = tabs[0];
+          if (event.key === 'End') next = tabs[tabs.length - 1];
+          if (next) { event.preventDefault(); selectTab(next); next.focus(); }
+        });
+      });
+      const jose = { name: 'José Faus', role: 'Software developer', basedIn: 'Viana do Castelo, PT', education: 'IPVC', experience: 'Colab4Food' };
+      function sayHello() { return 'Hello, world. Olá, mundo.'; }
+      document.getElementById('run-code').addEventListener('click', () => {
+        const output = document.getElementById('terminal-output');
+        const aboutSelected = document.getElementById('tab-about').getAttribute('aria-selected') === 'true';
+        const lines = aboutSelected ? [`${jose.name} · ${jose.role}`, jose.basedIn] : [sayHello(), 'A conversation is a good place to start.'];
+        output.replaceChildren(...lines.map((line, index) => {
+          const p = document.createElement('p');
+          if (index === 0) {
+            const prompt = document.createElement('span');
+            prompt.className = 'terminal-prompt';
+            prompt.textContent = '❯';
+            p.append(prompt);
+          } else p.style.color = '#a0aec5';
+          p.append(document.createTextNode(line));
+          return p;
+        }));
+        output.classList.remove('output-flash');
+        void output.offsetWidth;
+        output.classList.add('output-flash');
+      });
+
+      const colors = {
+        blue: { accent: '#3e5af3', tint: '#e7ecff', label: 'A little blue, a little you.' },
+        green: { accent: '#258575', tint: '#e0f0e9', label: 'A fresh perspective.' },
+        rose: { accent: '#b44f70', tint: '#f6e4ec', label: 'Something a little warmer.' }
+      };
+      const colorButtons = Array.from(document.querySelectorAll('.palette-option'));
+      const setColor = (name) => {
+        const color = colors[name];
+        const visual = document.getElementById('playground-visual');
+        visual.style.setProperty('--demo-accent', color.accent);
+        visual.style.setProperty('--demo-tint', color.tint);
+        colorButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.color === name)));
+        document.getElementById('palette-hint').textContent = color.label;
+      };
+      colorButtons.forEach((button) => button.addEventListener('click', () => setColor(button.dataset.color)));
+      document.getElementById('try-color').addEventListener('click', () => {
+        const active = colorButtons.findIndex((button) => button.getAttribute('aria-pressed') === 'true');
+        setColor(colorButtons[(active + 1) % colorButtons.length].dataset.color);
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
